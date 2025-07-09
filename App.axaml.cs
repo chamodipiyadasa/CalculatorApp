@@ -5,7 +5,7 @@ using Avalonia.Data.Core.Plugins;
 using System.Linq;
 using Avalonia.Markup.Xaml;
 using CalculatorApp.ViewModels;
-using CalculatorApp.Views;
+using CalculatorApp;
 
 namespace CalculatorApp;
 

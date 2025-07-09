@@ -1,20 +1,33 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:CalculatorApp.ViewModels"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="CalculatorApp.Views.MainWindow"
-        x:DataType="vm:MainWindowViewModel"
-        Icon="/Assets/avalonia-logo.ico"
-        Title="CalculatorApp">
+        x:Class="CalculatorApp.MainWindow"
+        Width="300" Height="400" Title="Calculator">
+    
+    <StackPanel Margin="10">
+        <!-- Display -->
+        <TextBox x:Name="Display" FontSize="32" IsReadOnly="True" HorizontalAlignment="Stretch" Margin="0,0,0,10"/>
 
-    <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
+        <!-- Buttons -->
+        <UniformGrid Columns="4" Rows="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Button Content="7" Click="OnButtonClick"/>
+            <Button Content="8" Click="OnButtonClick"/>
+            <Button Content="9" Click="OnButtonClick"/>
+            <Button Content="/" Click="OnButtonClick"/>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Content="4" Click="OnButtonClick"/>
+            <Button Content="5" Click="OnButtonClick"/>
+            <Button Content="6" Click="OnButtonClick"/>
+            <Button Content="*" Click="OnButtonClick"/>
 
+            <Button Content="1" Click="OnButtonClick"/>
+            <Button Content="2" Click="OnButtonClick"/>
+            <Button Content="3" Click="OnButtonClick"/>
+            <Button Content="-" Click="OnButtonClick"/>
+
+            <Button Content="0" Click="OnButtonClick"/>
+            <Button Content="C" Click="OnClearClick"/>
+            <Button Content="=" Click="OnEqualClick"/>
+            <Button Content="+" Click="OnButtonClick"/>
+        </UniformGrid>
+    </StackPanel>
 </Window>
